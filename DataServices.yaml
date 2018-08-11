@@ -1,0 +1,32 @@
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "Currency-converter  services to exchange-service "
+paths:
+  /currency-converter/from/{from}/to/{to}/quantity/{quantity}:
+    get:
+      description: Data Services calling currency-converter  to exchange-service which is connected to database!
+      parameters:
+        - name: from
+          in: path
+          type: string
+          required: true
+          description: from  currency chnage parameter.
+        - name: to
+          in: path
+          type: string
+          required: true
+          description: To currency chnage parameter.
+        - name: quantity
+          in: path
+          type: string
+          required: true
+          description: Quanity  for Currency.
+      responses:
+        200:
+          description: Connect to database successfully  -Currency-Converter  done and  getting   currency rate from data base -H2 and calculate  basis on passing Quantity.
+          schema:
+            type: string
+        400:
+          description: Invalid values were provided.
+  
