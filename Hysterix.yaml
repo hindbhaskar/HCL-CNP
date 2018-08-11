@@ -1,0 +1,23 @@
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "fault-tolerance"
+paths:
+  /fault-tolerance-example:
+    get:
+      description: Hysterix call to fallback Method !
+      responses:
+        200:
+          description: fault-tolerance fallbackRetrieveConfiguration method calling = maximum:999, minimum":9
+          schema:
+            type: string
+        400:
+          description: Invalid url provided.
+  /limits:
+    get:
+      description: Returns a greeting to the user!
+      responses:
+        200:
+          description: maximum:100, minimum":200
+        400:
+          description: Invalid url provided.

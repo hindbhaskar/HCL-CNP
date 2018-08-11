@@ -1,0 +1,57 @@
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "Currency-converter  services to exchange-service "
+paths:
+  /currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}:
+    get:
+      description: Calling currency-converter  services to exchange-service for currency !
+      parameters:
+        - name: from
+          in: path
+          type: string
+          required: true
+          description: The name of from  currency.
+        - name: to
+          in: path
+          type: string
+          required: true
+          description: Then name of  To currency.
+        - name: quantity
+          in: path
+          type: string
+          required: true
+          description: how much Quanity  we want to convert.
+      responses:
+        200:
+          description: Currency-Converter  done successfully with  load  balancing  where we have 2 instance of currency exchange service getting call from converter services using Eureka server.
+          schema:
+            type: string
+        400:
+          description: Invalid values were provided.
+  /currency-converter/from/{from}/to/{to}/quantity/{quantity}:
+    get:
+      description: Calling currency-converter  services to exchange-service for currency !
+      parameters:
+        - name: from
+          in: path
+          type: string
+          required: true
+          description: The name of from  currency.
+        - name: to
+          in: path
+          type: string
+          required: true
+          description: Then name of  To currency.
+        - name: quantity
+          in: path
+          type: string
+          required: true
+          description: how much Quanity  we want to convert.
+      responses:
+        200:
+          description: Currency-Converter  done successfully currency exchange service getting call from converter services.
+          schema:
+            type: string
+        400:
+          description: Invalid values were provided.
